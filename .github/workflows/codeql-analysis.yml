@@ -40,11 +40,11 @@ jobs:
 
     - name: Build project
       env:
-        CC: clang
+        CC: gcc
       run: |
        sudo apt -q update      
-       sudo apt install -q -y libcbor-dev libudev-dev original-awk clang-tools
-       /bin/sh -eux .actions/build-linux-clang
+       sudo apt install -q -y libcbor-dev libudev-dev original-awk
+       /bin/sh -eux .actions/build-linux-gcc
        
     - name: Perform CodeQL Analysis
       uses: github/codeql-action/analyze@v1
